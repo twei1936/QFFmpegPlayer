@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QFFmpegPlayer</class>
+ <widget class="QWidget" name="QFFmpegPlayer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QFFmpegPlayer</string>
+  </property>
+  <widget class="QFVideoWidget" name="window">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>480</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="OpenFile">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>420</y>
+     <width>61</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PlayOrPause">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>420</y>
+     <width>61</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Play</string>
+   </property>
+  </widget>
+  <widget class="QFSlider" name="PlayPos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>450</y>
+     <width>781</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>999</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QFVideoWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>QFVideoWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QFSlider</class>
+   <extends>QSlider</extends>
+   <header>QFSlider.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>OpenFile</sender>
+   <signal>clicked()</signal>
+   <receiver>QFFmpegPlayer</receiver>
+   <slot>openFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>457</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>418</x>
+     <y>896</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PlayOrPause</sender>
+   <signal>clicked()</signal>
+   <receiver>QFFmpegPlayer</receiver>
+   <slot>play_or_pause()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>116</x>
+     <y>431</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>189</x>
+     <y>622</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PlayPos</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>QFFmpegPlayer</receiver>
+   <slot>slider_release()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>392</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>817</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PlayPos</sender>
+   <signal>sliderPressed()</signal>
+   <receiver>QFFmpegPlayer</receiver>
+   <slot>slider_press()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>284</x>
+     <y>462</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>837</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openFile()</slot>
+  <slot>play_or_pause()</slot>
+  <slot>slider_press()</slot>
+  <slot>slider_release()</slot>
+ </slots>
+</ui>
