@@ -208,7 +208,6 @@ int main(int argc, char *argv[])
 //    tt.init("Japan-Sanin.mp4");
 //    tt.init(argv[1]);
 //    tt.init("Titanic.mkv");
-//    tt.init("sexybeauty.mp4");
 
 //    tt.init("rtmp://124.88.36.91:1935/live/cctv");
 //    tt.init("rtmp://58.200.131.2:1935/livetv/hunantv");
@@ -216,7 +215,7 @@ int main(int argc, char *argv[])
 //    tt.init("rtmp://ivi.bupt.edu.cn:1935/livetv/cctv9hd");  //音频播放不正常，待调试代码
 
 
-    //这个错误同播放meinv.mp4文件出现的错误一样
+    //这个错误同播放men.mp4文件出现的错误一样
     //-----------------------------------------------------------------------------------
     //QFFmpegPlayer: malloc.c:2401: sysmalloc: Assertion
     //`(old_top == initial_top (av)
